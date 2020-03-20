@@ -1,6 +1,6 @@
 require 'telegram/bot'
 
-class TelegramSender < ApplicationService
+class Telegram::SenderService < ApplicationService
   attr_reader :message, :chat_id
   
   def initialize(chat_id, message)

@@ -17,6 +17,7 @@ class Telegram::RecevierService < ApplicationService
     sender = Sender.find_or_create_by(id: @message.from.id)
     if (sender.first_name != @message.from.first_name or 
         sender.last_name != @message.from.last_name)
+      sender.first_name = @message.from.first_name
       sender.last_name = @message.from.last_name
       sender.save
     end

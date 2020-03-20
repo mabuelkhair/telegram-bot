@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_153027) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "conversation_id", null: false
+    t.bigint "conversation_id", null: false
     t.integer "sender_id", null: false
     t.text "content"
     t.datetime "created_at", precision: 6, null: false

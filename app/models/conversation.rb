@@ -1,3 +1,3 @@
 class Conversation < ApplicationRecord
-  has_many :Messages
+  has_many :messages
 end

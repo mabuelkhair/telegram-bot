@@ -1,5 +1,5 @@
 class Sender < ApplicationRecord
-  has_many :Messages
+  has_many :messages
   
   def full_name
     "#{first_name} #{last_name}"

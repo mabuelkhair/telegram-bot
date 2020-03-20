@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 2020_03_20_153027) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "Conversation_id", null: false
+    t.integer "conversation_id", null: false
     t.integer "sender_id", null: false
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Conversation_id"], name: "index_messages_on_Conversation_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
@@ -37,6 +38,6 @@ ActiveRecord::Schema.define(version: 2020_03_20_153027) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "messages", "Conversations"
+  add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "senders"
 end

@@ -1,7 +1,7 @@
 class CreateConversations < ActiveRecord::Migration[6.0]
   def change
-    create_table :conversations do |t|
-      t.bigint :conversation_id
+    create_table :conversations, id: false do |t|
+      t.bigint :id, primary_key: true
       t.string :conversation_type
       t.string :title
 

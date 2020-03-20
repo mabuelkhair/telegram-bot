@@ -8,7 +8,7 @@ class Telegram::RecevierService < ApplicationService
   def call
     # puts @message.inspect
     sender = create_or_update_sender
-    conversation = create_or_update_conversation
+    conversation = create_or_update_conversation(sender)
     message = create_or_update_message(sender, conversation)
   end
 
@@ -23,8 +23,8 @@ class Telegram::RecevierService < ApplicationService
     sender
   end
 
-  def create_or_update_conversation
-    conversation = Conversation.find_or_create_by(conversation_id: @message.chat.id, 
+  def create_or_update_conversation(sender)
+    conversation = Conversation.find_or_create_by(id: @message.chat.id, 
       conversation_type: @message.chat.type)
     if conversation.conversation_type != 'private' && conversation.title != @message.chat.title
       conversation.title = @message.chat.title

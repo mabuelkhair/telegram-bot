@@ -13,12 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_03_20_153027) do
 
   create_table "conversations", force: :cascade do |t|
-    t.bigint "conversation_id"
     t.string "conversation_type"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_conversations_on_conversation_id"
+    t.index "\"conversation_id\"", name: "index_conversations_on_conversation_id"
   end
 
   create_table "messages", force: :cascade do |t|

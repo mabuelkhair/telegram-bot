@@ -24,6 +24,7 @@ rails db:migrate
 ##### 3. Add credentials
 Set rails credentials of project **before running it**
 
+please remove files inside config/credintials to create your own credintials
 use below command to edit credentials
 please replace **subl** with whatever editor you prefer I prefer sublime that's why I use subl 
 ```bash

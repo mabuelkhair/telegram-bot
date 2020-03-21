@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  conversation_id: 
-  conversation_type: MyString
-  title: MyString
-
-two:
-  conversation_id: 
-  conversation_type: MyString
-  title: MyString
+---
+conversation_-458561545:
+  id: -458561545
+  conversation_type: group
+  title: First Group
+  created_at: '2020-03-21 15:16:06.763258'
+  updated_at: '2020-03-21 15:16:06.874350'
+conversation_936701930:
+  id: 936701930
+  conversation_type: private
+  title: Mostafa Abdelsalam
+  created_at: '2020-03-21 15:16:07.247660'
+  updated_at: '2020-03-21 15:16:07.329679'

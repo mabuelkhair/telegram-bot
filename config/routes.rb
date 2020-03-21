@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :conversations, only: [:index]
+  root 'conversations#index'
+  resources :conversations, only: [:index, :show]
 end

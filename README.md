@@ -62,5 +62,7 @@ rails test
 
 #### TODO 
 1- use webhook (currently it uses long polling to be able to run app locally without the need of ngrok or any similar app)
+
 2- update UI when message received (currently: it's save to database but not reflected to UI you have to refresh)
+
 3- Add more tests 

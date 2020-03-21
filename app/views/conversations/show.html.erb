@@ -23,8 +23,15 @@
   </div>
   <div class="type_msg">
     <div class="input_msg_write">
-      <input type="text" class="write_msg" placeholder="Type a message" />
-      <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+      <%= form_with model: @message, remote: true, method: :post do |form| %>
+
+        <input type="text" id="message" name="message" class="write_msg" placeholder="Type a message" />
+        <input type="hidden" id="conversation_id" name="conversation_id" class="write_msg" placeholder="Type a message" value="<%= @conversation.id %>" />
+        <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+        <button class="msg_send_btn" type="button">
+          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+        </button>
+      <% end %>
     </div>
   </div>
 </div>

@@ -5,10 +5,9 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.find(params.dig(:id))
+    @message = Message.new conversation: @conversation
     @messages = @conversation.messages.includes(:sender)
-    # @message = Message.new room: @room
-    # @messages = @room.room_messages..includes(:user)
   end
 
   private

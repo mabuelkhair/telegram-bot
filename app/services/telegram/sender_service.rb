@@ -13,9 +13,9 @@ class Telegram::SenderService < ApplicationService
     Telegram::Bot::Client.run(token) do |bot|
       response = bot.api.send_message(chat_id: chat_id, text: message)
       # Todo: handle exceptions in message sending
-      puts "#{Message.create(id: response["result"]["message_id"],
+      Message.create(id: response["result"]["message_id"],
         sender_id: response["result"]["from"]["id"],
-        conversation_id: chat_id, content: message).errors.inspect}"
+        conversation_id: chat_id, content: message)
     end
   end
 

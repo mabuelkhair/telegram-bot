@@ -1,24 +1,66 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Ruby [2.7.0]
+- Rails [6.0.2]
 
-* Ruby version
+##### 1. Check out the repository
 
-* System dependencies
+```bash
+git clone https://github.com/mabuelkhair/telegram-bot.git
+```
 
-* Configuration
+##### 2. Setup environment
 
-* Database creation
+Run the following commands to create and setup the database.
 
-* Database initialization
+```ruby
+bundle
+rails db:create
+rails db:migrate
+```
+##### 3. Add credentials
+Set rails credentials of project **before running it**
 
-* How to run the test suite
+use below command to edit credentials
+please replace **subl** with whatever editor you prefer I prefer sublime that's why I use subl 
+```bash
+EDITOR="subl --wait" rails credentials:edit --environment development
+```
+add secrets like below
+```
+telegram:
+  bot_token: your_bot_token
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 4. Start the Rails server
 
-* Deployment instructions
+You can start the rails server using the command given below.
 
-* ...
+```bash
+rails s
+```
+
+#### 5. Start listener
+to listen for new received messages
+```bash
+rails r lib/bot.rb
+```
+
+And now you can access the app using this URL http://localhost:3000
+
+##### 4. To Run Test
+
+Just run this command to check run tests
+
+```ruby
+rails test
+```
+
+
+#### TODO 
+1- use webhook (currently it uses long polling to be able to run app locally without the need of ngrok or any similar app)
+2- update UI when message received (currently: it's save to database but not reflected to UI you have to refresh)
+3- Add more tests 
